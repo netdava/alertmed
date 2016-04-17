@@ -148,7 +148,20 @@
 
     })
 
-    $('select.dropdown').dropdown()
+    $('select.dropdown').dropdown();
+
+    $('#new-alert')
+      .form({
+        fields: {
+          name     : 'empty',
+          location : 'empty',
+          email    : 'empty',
+          medicine : 'empty',
+          problem  : 'empty'
+        }
+      })
+    ;
+
 
 </script>
 

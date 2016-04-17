@@ -16,46 +16,46 @@
     <div class="ui vertical stripe segment">
         <div class="ui middle aligned stackable grid container">
             <div class="eight wide centered column">
-                <div class="ui form">
+                <form id="new-alert" method="POST" action="/cazuri" class="ui form">
                     <h2 class="ui dividing header">Introduceți Alerta</h2>
                     <div class="two fields">
                         <div class="field">
                             <label>Nume</label>
-                            <input type="text" placeholder="Nume"/>
+                            <input type="text" name="name" placeholder="Nume"/>
                         </div>
                         <div class="field">
                             <label>Email</label>
-                            <input type="email" placeholder="Email"/>
+                            <input type="email" name="email" placeholder="Email"/>
                         </div>
                     </div>
                     <div class="two fields">
                         <div class="field">
                             <label>Localitate</label>
-                            <input type="text" placeholder="Localitate"/>
+                            <input type="text" name="location" placeholder="Localitate"/>
                         </div>
                         <div class="field">
                             <label>Telefon</label>
-                            <input type="text" placeholder="Telefon"/>
+                            <input type="text" name="phone" placeholder="Telefon"/>
                         </div>
                     </div>
                     <div class="field">
                         <label>Medicament</label>
-                        <input type="text" placeholder="Medicament"/>
+                        <input type="text" name="medicine" placeholder="Medicament"/>
                     </div>
                     <div class="field">
                         <label>Detalii problemă</label>
-                        <textarea rows="2"></textarea>
+                        <textarea name="problem" rows="2"></textarea>
                     </div>
                     <h4 class="ui dividing header">Informații opționale</h4>
 
                     <div class="two fields">
                         <div class="field">
                             <label>Vârstă</label>
-                            <input type="text" placeholder="Vârstă"/>
+                            <input type="text" name="age" placeholder="Vârstă"/>
                         </div>
                         <div class="field">
                             <label>Sex</label>
-                            <select class="ui dropdown">
+                            <select name="sex" class="ui dropdown">
                                 <option value="">Alegeți</option>
                                 <option value="M">Masculin</option>
                                 <option value="F">Feminin</option>
@@ -65,20 +65,17 @@
                     <div class="two fields">
                         <div class="field">
                             <label>Afecțiune</label>
-                            <input type="text" placeholder="Afecțiune"/>
+                            <input type="text" name="affection" placeholder="Afecțiune"/>
                         </div>
                         <div class="field">
                             <label>Pacient</label>
-                            <input type="text" placeholder="Nume pacient"/>
+                            <input type="text" name="pacient" placeholder="Nume pacient"/>
                         </div>
                     </div>
 
-                </div>
-            </div>
-            <div class="row">
-                <div class="center aligned column">
-                    <button class="ui button">Trimite</button>
-                </div>
+                    <button class="ui button submit">Trimite</button>
+                    <button class="ui button reset">Șterge</button>
+                </form>
             </div>
         </div>
     </div>
