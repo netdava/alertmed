@@ -158,6 +158,10 @@ distributions {
                 into 'sql'
             }
 
+            from('webroot') {
+                into "webroot"
+            }
+
             from(fileTree('bower_components')) {
                 into 'webroot/components'
             }
