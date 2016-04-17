@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.thymeleaf.org"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layouts/public">
+<head>
+    <title>Caz nou:: AlertMed</title>
+</head>
+<body>
+
+<div class="pusher" layout:fragment="content">
+
+    <div class="ui inverted vertical center aligned segment">
+        <div th:replace="fragments/misc :: top_menu"/>
+    </div>
+
+    <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+            <div class="eight wide centered column">
+                <div class="ui form">
+                    <h2 class="ui dividing header">Introduceți Alerta</h2>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Nume</label>
+                            <input type="text" placeholder="Nume"/>
+                        </div>
+                        <div class="field">
+                            <label>Email</label>
+                            <input type="email" placeholder="Email"/>
+                        </div>
+                    </div>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Localitate</label>
+                            <input type="text" placeholder="Localitate"/>
+                        </div>
+                        <div class="field">
+                            <label>Telefon</label>
+                            <input type="text" placeholder="Telefon"/>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Medicament</label>
+                        <input type="text" placeholder="Medicament"/>
+                    </div>
+                    <div class="field">
+                        <label>Detalii problemă</label>
+                        <textarea rows="2"></textarea>
+                    </div>
+                    <h4 class="ui dividing header">Informații opționale</h4>
+
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Vârstă</label>
+                            <input type="text" placeholder="Vârstă"/>
+                        </div>
+                        <div class="field">
+                            <label>Sex</label>
+                            <select class="ui dropdown">
+                                <option value="">Alegeți</option>
+                                <option value="M">Masculin</option>
+                                <option value="F">Feminin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Afecțiune</label>
+                            <input type="text" placeholder="Afecțiune"/>
+                        </div>
+                        <div class="field">
+                            <label>Pacient</label>
+                            <input type="text" placeholder="Nume pacient"/>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="center aligned column">
+                    <button class="ui button">Trimite</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
