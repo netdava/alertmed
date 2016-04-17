@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.thymeleaf.org"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layouts/public">
+<head>
+    <title>Harta :: AlertMed</title>
+</head>
+<body>
+
+<div class="pusher" layout:fragment="content">
+
+    <div class="ui inverted vertical center aligned segment">
+        <div th:replace="fragments/misc :: top_menu"/>
+    </div>
+
+    <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+       function initMap() {
+         var map = new google.maps.Map(document.getElementById('map'), {
+           center: {lat: 0, lng: 0},
+           zoom: 3,
+           styles: [{
+             featureType: 'poi',
+             stylers: [{ visibility: 'off' }]  // Turn off points of interest.
+           }, {
+             featureType: 'transit.station',
+             stylers: [{ visibility: 'off' }]  // Turn off bus stations, train stations, etc.
+           }],
+           disableDoubleClickZoom: true
+         });
+       }
+</script>
+
+    <script async="async" deferred="deferred" type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4NEPvA03p3o2BOH1oB_FG-2jYH_jnJY0&amp;libraries=visualization&amp;callback=initMap">
+    </script>
+</div>
+
+</body>
+</html>
