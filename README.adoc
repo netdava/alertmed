@@ -1,0 +1,11 @@
+= AlertMed - platform for rare/hard to find medicine alerts
+
+This project was built during the first edition of Bucharest EditorLab hackathon [1].
+THe hackathon was part of Global Editors Network.
+
+Source code git@github.com:netdava/alertmed.git
+
+== References
+
+[1] http://www.globaleditorsnetwork.org/programmes/editors-lab/bucharest-editors-lab/
+
