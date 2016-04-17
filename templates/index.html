@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.thymeleaf.org"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layouts/public">
+<head>
+    <title>Medicamente rare :: AlertMed</title>
+</head>
+<body>
+
+<div class="pusher" layout:fragment="content">
+
+    <div class="ui inverted vertical center aligned segment">
+
+        <div class="ui container">
+            <div class="ui large secondary inverted pointing menu" th:include="fragments/misc :: top_menu_links">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+            <div class="row">
+                <div class="center aligned column">
+                    <div class="ui form">
+                        <div class="field">
+                            <label>User Input</label>
+                            <input type="text"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="center aligned column">
+                    <a class="ui huge button">Check Them Out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

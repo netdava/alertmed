@@ -1,0 +1,21 @@
+{
+  "name": "alertmed",
+  "authors": [
+    "Ioan Eugen Stan <eu@ieugen.ro>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "semantic": "semantic-ui#^2.1.8"
+  }
+}

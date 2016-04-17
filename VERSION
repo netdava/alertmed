@@ -1,0 +1,5 @@
+Version: ${version}
+Revision: ${revision}
+Short-message: ${shortMessage}
+Build-date: ${buildDate.format('yyyy-MM-dd HH:mm:ss')}
+Application-name: ${appName}

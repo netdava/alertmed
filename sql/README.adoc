@@ -1,0 +1,1 @@
+Place database migration scripts in this directory.

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Misc components</title>
+</head>
+<body>
+
+<div th:fragment="header" class="ui vertical inverted sidebar menu">
+    <!-- Sidebar Menu -->
+    <a class="active item">Home</a>
+    <a class="item">Login</a>
+    <a class="item">Signup</a>
+</div>
+
+<div th:fragment="top_menu_links">
+    <a class="toc item">
+        <i class="sidebar icon"></i>
+    </a>
+    <a class="item" href="#">Acasă</a>
+    <a class="item" href="/lista-cazuri">Listă cazuri</a>
+    <a class="item" href="/caz-nou">Caz nou</a>
+
+    <div class="right item">
+        <a class="ui inverted button">Autentificare</a>
+        <a class="ui inverted button">Cont nou</a>
+    </div>
+</div>
+
+
+</body>
+</html>

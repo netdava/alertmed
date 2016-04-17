@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.thymeleaf.org"
+      layout:decorator="layouts/public">
+<head>
+    <title>Caz nou:: AlertMed</title>
+</head>
+<body>
+
+<div class="pusher" layout:fragment="content">
+
+    <div class="ui inverted vertical center aligned segment">
+
+        <div class="ui container">
+            <div class="ui large secondary inverted pointing menu">
+                <a class="toc item">
+                    <i class="sidebar icon"></i>
+                </a>
+                <a class="item" href="#">Home</a>
+                <a class="item" href="/caz-nou">Caz nou</a>
+                <a class="item" href="/lista-cazuri">Listă cazuri</a>
+
+                <div class="right item">
+                    <a class="ui inverted button">Log in</a>
+                    <a class="ui inverted button">Sign Up</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+            <div class="row">
+                <div class="center aligned column">
+                    <div class="ui form">
+                        <div class="field">
+                            <label>User Input</label>
+                            <input type="text"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="center aligned column">
+                    <a class="ui huge button">Check Them Out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
