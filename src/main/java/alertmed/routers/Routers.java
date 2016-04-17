@@ -16,8 +16,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 
 @Slf4j
@@ -42,8 +40,6 @@ public class Routers {
     @Bean
     public Router mainRouter() {
         Router router = Router.router(vertx);
-
-        Path homePath = Paths.get(homeDirectory);
 
         router.route().handler(BodyHandler.create().setBodyLimit(50 * MB));
         router.route().handler(LoggerHandler.create());
@@ -71,7 +67,7 @@ public class Routers {
         router.route("/static/*")
                 .handler(StaticHandler.create()
                         .setAllowRootFileSystemAccess(true)
-                        .setWebRoot(homePath.resolve("webroot").toString())
+                        .setWebRoot("webroot")
                         .setIndexPage("index.html")
                         .setCachingEnabled(false));
 
