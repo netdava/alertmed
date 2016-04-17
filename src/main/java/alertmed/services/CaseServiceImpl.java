@@ -1,6 +1,6 @@
 package alertmed.services;
 
-import alertmed.model.Case;
+import alertmed.model.Alert;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.google.common.io.CharSource;
 import com.google.common.io.Resources;
@@ -18,20 +18,30 @@ import java.util.List;
 @Slf4j
 @Data
 @Component
-public class CaseServiceImpl implements CaseService {
+public class CaseServiceImpl implements AlertsService {
 
-    private List<Case> cases;
+    private List<Alert> alerts;
 
     @Override
-    public List<Case> list() {
-        if (cases == null) {
-            cases = loadData("cases.json");
+    public List<Alert> list() {
+        if (alerts == null) {
+            alerts = loadData("cases.json");
         }
-        return cases;
+        return alerts;
     }
 
-    public List<Case> loadData(@NonNull String resourcePath) {
-        TypeReference<List<Case>> CASE_LIST_TYPE = new TypeReference<List<Case>>() {
+    @Override
+    public void addAlert(@NonNull Alert alert) {
+        alerts.add(alert);
+    }
+
+    @Override
+    public long size() {
+        return alerts.size();
+    }
+
+    public List<Alert> loadData(@NonNull String resourcePath) {
+        TypeReference<List<Alert>> CASE_LIST_TYPE = new TypeReference<List<Alert>>() {
         };
 
         URL matchingJson = Resources.getResource(resourcePath);

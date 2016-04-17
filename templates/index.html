@@ -22,12 +22,12 @@
                         <input class="prompt large" type="text" placeholder="Cauta nume, localitate, medicament ..."/>
                         <i class="search icon"></i>
                     </div>
-                    <div class="results"></div>
                 </div>
+                <a class="ui right floated button" href="/caz-nou">Adaugă alertă</a>
             </div>
 
             <div class="ui one stackable cards">
-                <div th:each="case : ${context.get('cases')}" class="card">
+                <div th:each="case : ${context.get('alerts')}" class="card">
                     <div th:include="fragments/misc :: case_card(${case})" th:remove="tag"/>
                 </div>
             </div>
