@@ -6,19 +6,14 @@ import org.apache.commons.dbcp2.BasicDataSource;
 import org.flywaydb.core.Flyway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.AbstractEnvironment;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.MapPropertySource;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.sql.DataSource;
@@ -35,11 +30,12 @@ import java.util.Properties;
  * The Spring evaluationAndMatchingService bean and repository are scanned for via @EnableJpaRepositories and @ComponentScan annotations
  */
 @Slf4j
-@Configuration
-@ComponentScan
-@EnableJpaRepositories
-@EnableTransactionManagement
-@PropertySource("${spring.config.name}")
+//TODO: ieugen: ignored until we need database
+//@Configuration
+//@ComponentScan
+//@EnableJpaRepositories
+//@EnableTransactionManagement
+//@PropertySource("${spring.config.name}")
 public class DatabaseConfig {
 
     @Autowired
