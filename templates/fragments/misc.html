@@ -16,7 +16,7 @@
     <a class="toc item">
         <i class="sidebar icon"></i>
     </a>
-    <a class="item" href="#">Acasă</a>
+    <a class="item" href="/">Acasă</a>
     <a class="item" href="/lista-cazuri">Listă cazuri</a>
     <a class="item" href="/caz-nou">Caz nou</a>
 
@@ -26,6 +26,33 @@
     </div>
 </div>
 
+
+<div th:fragment="top_menu" class="ui container">
+    <div class="ui large secondary inverted pointing menu" th:include="fragments/misc :: top_menu_links"/>
+</div>
+
+<div th:fragment="case_card( case )" class="card">
+    <div class="content">
+        <div class="header" th:text="${case.name + ', ' + case.location}">Mihai Bica</div>
+        <div class="meta left floated">
+            Caz <span th:text="${'#' + case.id}">34</span>
+        </div>
+        <div class="meta right floated"
+             th:with="formatter = ${@alertmed.utils.ThymeleafDateFormatter@create('dd-MM-yyyy / HH:mm')}">
+            Creat la <span th:text="${formatter.format(case.submitTime) }">34</span>
+        </div>
+    </div>
+    <div class="content">
+        <div class="header left floated" th:text="${case.medicine}"></div>
+
+        <div class="description" th:text="${case.problem}">
+            Am nevoie urgenta.
+        </div>
+    </div>
+    <div class="extra content">
+        <a class="ui button right floated" th:href="${'/cazuri/detaliat?id=' + case.id }">Detalii</a>
+    </div>
+</div>
 
 </body>
 </html>

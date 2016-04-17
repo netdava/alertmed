@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.thymeleaf.org"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layouts/public"
+      th:with="case=${context.get('case')}">
+<head>
+    <title th:text="${'Caz ' + case.id + ' :: AlertMed'}">Caz 1 :: AlertMed</title>
+</head>
+<body>
+
+<div class="pusher" layout:fragment="content"
+     th:with="formatter = ${@alertmed.utils.ThymeleafDateFormatter@create('dd-MM-yyyy / HH:mm')}">
+
+    <div class="ui inverted vertical center aligned segment">
+        <div th:replace="fragments/misc :: top_menu"/>
+    </div>
+
+    <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+            <div class="sixteen wide column">
+                <div class="ui fluid card">
+                    <div class="content">
+                        <div class="header" th:text="${case.name + ', ' + case.location}">Mihai Bica</div>
+                        <div class="meta left floated">
+                            Caz <span th:text="${'#' + case.id}">34</span>
+                        </div>
+                        <div class="meta right floated"
+                             th:with="formatter = ${@alertmed.utils.ThymeleafDateFormatter@create('dd-MM-yyyy / HH:mm')}">
+                            Creat la <span th:text="${formatter.format(case.submitTime) }">34</span>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="header left floated" th:text="${case.medicine}"></div>
+
+                        <div class="description" th:text="${case.problem}">
+                            Am nevoie urgenta.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="ui feed">
+                        <div class="event">
+                            <div class="content">
+                                <div class="summary">
+                                    <a>Joe Henderson</a> posted on his page
+                                    <div class="date">
+                                        3 days ago
+                                    </div>
+                                </div>
+                                <div class="extra text">
+                                    Ours is a life of constant reruns. We're always circling back to where we'd we
+                                    started, then starting all over again. Even if we don't run extra laps that day, we
+                                    surely will come back for more of the same another day soon.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

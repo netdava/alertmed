@@ -10,33 +10,31 @@
 <div class="pusher" layout:fragment="content">
 
     <div class="ui inverted vertical center aligned segment">
-
-        <div class="ui container">
-            <div class="ui large secondary inverted pointing menu" th:include="fragments/misc :: top_menu_links">
-            </div>
-        </div>
-
+        <div th:replace="fragments/misc :: top_menu"/>
     </div>
 
     <div class="ui vertical stripe segment">
-        <div class="ui middle aligned stackable grid container">
+        <div class="ui centered grid container">
+
             <div class="row">
-                <div class="center aligned column">
-                    <div class="ui form">
-                        <div class="field">
-                            <label>User Input</label>
-                            <input type="text"/>
-                        </div>
+                <div class="ui search">
+                    <div class="ui icon input">
+                        <input class="prompt large" type="text" placeholder="Cauta nume, localitate, medicament ..."/>
+                        <i class="search icon"></i>
                     </div>
+                    <div class="results"></div>
                 </div>
             </div>
-            <div class="row">
-                <div class="center aligned column">
-                    <a class="ui huge button">Check Them Out</a>
+
+            <div class="ui one stackable cards">
+                <div th:each="case : ${context.get('cases')}" class="card">
+                    <div th:include="fragments/misc :: case_card(${case})" th:remove="tag"/>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 </body>
 </html>
